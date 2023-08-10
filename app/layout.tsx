@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 
-const font = Space_Grotesk({ subsets: ["latin"] });
+const font = Space_Grotesk({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: "Vito Secona",
