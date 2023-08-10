@@ -1,3 +1,4 @@
+import { cn } from "@/utils/classnames";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={cn(font.className, "bg-gray-100")}>{children}</body>
     </html>
   );
 }
