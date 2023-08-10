@@ -2,7 +2,7 @@ import { cnProps } from "@/utils/classnames";
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
 export const Card = forwardRef<HTMLDivElement, ComponentPropsWithoutRef<"div">>(
-  ({ className, ...props }, ref) => {
+  (props, ref) => {
     return (
       <div
         {...cnProps(
