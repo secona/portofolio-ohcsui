@@ -1,12 +1,13 @@
 import { ButtonLink } from "@/components/ButtonLink";
 import { Card } from "@/components/Card";
 import { GitHubRepo } from "@/components/GitHubRepo";
+import { Section } from "@/components/Section";
 import { GitHub, Linkedin, Twitter } from "react-feather";
 
 export default function Home() {
   return (
     <>
-      <div className="w-full h-screen flex items-center justify-center flex-col gap-3 pb-16 border-b-4 border-black">
+      <Section className="bg-gray-100">
         <Card className="py-6 px-8">
           <p className="text-sm">Hello, World! My name is</p>
           <h1 className="text-4xl font-black">Vito Secona</h1>
@@ -29,13 +30,13 @@ export default function Home() {
             <Twitter color="white" />
           </ButtonLink>
         </div>
-      </div>
-      <div className="w-full h-screen flex items-center justify-center flex-col gap-3 pb-16 bg-yellow-300">
+      </Section>
+      <Section className="bg-yellow-300">
         <div className="flex flex-wrap gap-4">
           <GitHubRepo></GitHubRepo>
           <GitHubRepo></GitHubRepo>
         </div>
-      </div>
+      </Section>
     </>
   );
 }
