@@ -14,7 +14,7 @@ interface GitHubRepoProps {
 
 export const GitHubRepo = (props: GitHubRepoProps) => {
   return (
-    <Card className="py-6 px-8 w-96">
+    <Card className="w-96">
       <Image
         width={1920}
         height={1080}

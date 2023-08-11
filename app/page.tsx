@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <>
       <Section className="bg-gray-100">
-        <Card className="py-6 px-8">
-          <p className="text-sm">Hello, World! My name is</p>
-          <h1 className="text-4xl font-black">Vito Secona</h1>
-          <h2 className="font-black">Web Developer</h2>
+        <Card>
+          <p className="text-lg">Hello, World! My name is</p>
+          <h1 className="text-7xl">Vito Secona</h1>
+          <h2 className="text-lg">Web Developer</h2>
         </Card>
         <div className="flex gap-3">
           <ButtonLink href="https://github.com/secona" className="bg-[#333333]">
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       </Section>
       <Section className="bg-blue-300">
-        <Card className="py-6 px-8 max-w-2xl">
+        <Card className="max-w-2xl">
           <h1 className="text-6xl">About Me</h1>
           <p>
             I am a Computer Science student at Universitas Indonesia. I have
