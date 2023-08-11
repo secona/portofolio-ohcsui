@@ -12,7 +12,7 @@ export const Section = forwardRef<
         "w-full min-h-screen",
         "flex flex-col items-center justify-center gap-3",
         "[&:not(:first-child)]:border-t-4 border-solid border-black",
-        "pb-16"
+        "pb-16 relative"
       )}
       ref={ref}
     />

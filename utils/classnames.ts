@@ -9,5 +9,5 @@ export const cnProps = (
   props: Record<string, any>,
   ...classnames: string[]
 ) => {
-  return { ...props, className: cn(props.className, ...classnames) };
+  return { ...props, className: cn(...classnames, props.className) };
 };

@@ -2,6 +2,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { Card } from "@/components/Card";
 import { GitHubRepo } from "@/components/GitHubRepo";
 import { Section } from "@/components/Section";
+import { TypingCode } from "@/components/TypingCode";
 import { ReactLogo } from "@/icons/ReactLogo";
 import { RustLogo } from "@/icons/RustLogo";
 import { SCSSLogo } from "@/icons/SCSSLogo";
@@ -12,12 +13,13 @@ export default function Home() {
   return (
     <>
       <Section className="bg-gray-100">
-        <Card>
+        <TypingCode />
+        <Card className="z-10">
           <p className="text-lg">Hello, World! My name is</p>
           <h1 className="text-7xl">Vito Secona</h1>
           <h2 className="text-lg">Web Developer</h2>
         </Card>
-        <div className="flex gap-3">
+        <div className="flex gap-3 z-10">
           <ButtonLink href="https://github.com/secona" className="bg-[#333333]">
             <GitHub color="white" />
           </ButtonLink>

@@ -15,7 +15,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
           props,
           "border-2 border-solid border-black",
           "shadow-hard shadow-black",
-          "bg-white relative",
+          "bg-white",
           "py-6 px-8",
           titleBar ? "pt-10" : ""
         )}
