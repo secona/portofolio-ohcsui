@@ -1,21 +1,12 @@
 "use client";
-import { Card } from "./Card";
+import { Card, CardProps } from "./Card";
 import { useEffect, useState } from "react";
 
-const code = `#[derive(Default, PartialEq)]
-pub struct Point<T = usize> {
-    pub x: T,
-    pub y: T,
+export interface TypingCodeProps extends CardProps {
+  code: string;
 }
 
-impl Point<usize> {
-    pub fn new(x: usize, y: usize) -> Self {
-        Self { x, y }
-    }
-}
-`;
-
-export const TypingCode = () => {
+export const TypingCode = ({ code, ...props }: TypingCodeProps) => {
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
 
@@ -37,8 +28,10 @@ export const TypingCode = () => {
     }
   });
 
+  if (text === "") return <></>;
+
   return (
-    <Card titleBar className="absolute left-[15%] top-[25%]">
+    <Card titleBar {...props}>
       <pre>{text}</pre>
     </Card>
   );
