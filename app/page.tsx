@@ -2,6 +2,10 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { Card } from "@/components/Card";
 import { GitHubRepo } from "@/components/GitHubRepo";
 import { Section } from "@/components/Section";
+import { ReactLogo } from "@/icons/ReactLogo";
+import { RustLogo } from "@/icons/RustLogo";
+import { SCSSLogo } from "@/icons/SCSSLogo";
+import { TSLogo } from "@/icons/TSLogo";
 import { GitHub, Linkedin, Twitter } from "react-feather";
 
 export default function Home() {
@@ -33,8 +37,26 @@ export default function Home() {
       </Section>
       <Section className="bg-yellow-300">
         <div className="flex flex-wrap gap-4">
-          <GitHubRepo></GitHubRepo>
-          <GitHubRepo></GitHubRepo>
+          <GitHubRepo
+            path="secona/task-tracker"
+            description="Task tracking application"
+            langLogos={
+              <>
+                <ReactLogo />
+                <SCSSLogo />
+                <TSLogo />
+              </>
+            }
+          />
+          <GitHubRepo
+            path="secona/pinisi"
+            description="File explorer in the command line"
+            langLogos={
+              <>
+                <RustLogo />
+              </>
+            }
+          />
         </div>
       </Section>
     </>
