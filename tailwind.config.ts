@@ -11,9 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        dots: "radial-gradient(black 1px, transparent 0)",
       },
       boxShadow: {
         hard: "4px 4px 0px 0px",
