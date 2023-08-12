@@ -2,8 +2,8 @@ import { Section } from "@/components/Section";
 
 export const AboutMe = () => {
   return (
-    <Section id="about-me" className="bg-white grid grid-cols-2 gap-0">
-      <div className="bg-orange-400 h-full w-full"></div>
+    <Section id="about-me" className="bg-orange-400 grid grid-cols-2 gap-0">
+      <div className="h-full w-full"></div>
       <div className="px-36 bg-blue-300 h-full w-full border-l-4 border-solid border-black flex flex-col justify-center">
         <h1 className="text-7xl mb-4">About Me</h1>
         <p className="text-lg">
