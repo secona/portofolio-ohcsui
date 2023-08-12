@@ -1,12 +1,27 @@
 import { Section } from "@/components/Section";
+import { cn } from "@/utils/classnames";
+
+const paragraphCN = cn(
+  "h-full w-full",
+  "flex flex-col justify-center",
+  "px-16 sm:px-24 md:px-48 lg:px-24 xl:px-36",
+  "border-t-4 lg:border-t-0",
+  "border-l-0 lg:border-l-4",
+  "border-solid border-black"
+);
 
 export const AboutMe = () => {
   return (
     <Section
       id="about-me"
-      className="grid h-[200vh] lg:h-[100vh] grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 gap-0"
+      className={cn(
+        "grid",
+        "h-[200vh] lg:h-[100vh]",
+        "grid-rows-2 lg:grid-rows-1",
+        "grid-cols-1 lg:grid-cols-2"
+      )}
     >
-      <div className="bg-orange-400 px-16 sm:px-24 md:px-48 lg:px-24 xl:px-36 h-full w-full border-t-4 lg:border-t-0 border-l-0 lg:border-l-4 border-solid border-black flex flex-col justify-center">
+      <div className={cn(paragraphCN, "bg-orange-400")}>
         <h1 className="text-7xl mb-4">About Me</h1>
         <p className="text-lg">
           I am a Web Developer and a dedicated student at University of
@@ -16,7 +31,7 @@ export const AboutMe = () => {
           Development and other areas of programming.
         </p>
       </div>
-      <div className="px-16 sm:px-24 md:px-48 lg:px-24 xl:px-36 bg-blue-300 h-full w-full border-t-4 lg:border-t-0 border-l-0 lg:border-l-4 border-solid border-black flex flex-col justify-center">
+      <div className={cn(paragraphCN, "bg-blue-300")}>
         <p className="text-lg">
           Fueled by curiosity and passion, I am eager to learn more about the
           world of Computer Science and Web Development. I am open to new

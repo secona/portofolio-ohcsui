@@ -1,4 +1,4 @@
-import { cnProps } from "@/utils/classnames";
+import { cn, cnProps } from "@/utils/classnames";
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
 export interface CardProps extends ComponentPropsWithoutRef<"div"> {
@@ -22,7 +22,14 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
         ref={ref}
       >
         {titleBar && (
-          <div className="pointer-events-none absolute top-0 left-0 h-6 w-full bg-orange-400 border-b-2 border-solid border-black flex justify-between px-2">
+          <div
+            className={cn(
+              "pointer-events-none",
+              "absolute top-0 left-0 px-2 h-6 w-full",
+              "bg-orange-400 border-b-2 border-solid border-black",
+              "flex justify-between"
+            )}
+          >
             <span>ooo</span>
             <span>x</span>
           </div>

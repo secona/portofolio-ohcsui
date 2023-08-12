@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/utils/classnames";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export const DotsBG = () => {
@@ -11,7 +12,11 @@ export const DotsBG = () => {
   return (
     <motion.div
       style={{ y }}
-      className="bg-dots bg-[length:40px_40px] absolute top-0 left-0 h-full w-full"
+      className={cn(
+        "bg-dots bg-[length:40px_40px]",
+        "absolute top-0 left-0",
+        "h-full w-full"
+      )}
     />
   );
 };
