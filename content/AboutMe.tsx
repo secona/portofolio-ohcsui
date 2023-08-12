@@ -6,8 +6,6 @@ const paragraphCN = cn(
   "h-full w-full",
   "flex flex-col justify-center",
   "px-16 sm:px-24 md:px-48 lg:px-24 xl:px-36",
-  "border-t-4 lg:border-t-0",
-  "border-l-0 lg:border-l-4",
   "border-solid border-black"
 );
 
@@ -35,7 +33,14 @@ export const AboutMe = () => {
         </RevealSideways>
       </div>
 
-      <div className={cn(paragraphCN, "bg-blue-300")}>
+      <div
+        className={cn(
+          paragraphCN,
+          "border-t-4 lg:border-t-0",
+          "border-l-0 lg:border-l-4",
+          "bg-blue-300"
+        )}
+      >
         <RevealSideways direction={-1}>
           <p className="text-lg">
             Fueled by curiosity and passion, I am eager to learn more about the
