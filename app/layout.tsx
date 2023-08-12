@@ -9,6 +9,11 @@ const font = Space_Grotesk({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata: Metadata = {
   title: "Vito Secona",
   description: "Vito Secona's portfolio website.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    userScalable: false,
+  },
 };
 
 export default function RootLayout({
