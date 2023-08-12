@@ -12,6 +12,15 @@ const email = nodemailer.createTransport({
 export async function POST(request: NextRequest) {
   const body = await request.json();
 
+  if (
+    body.email === undefined &&
+    body.name === undefined &&
+    body.subject === undefined &&
+    body.message === undefined
+  ) {
+    return NextResponse.json({ message: "Bad Request" }, { status: 400 });
+  }
+
   await email.sendMail({
     from: `Contact Me Form <${process.env.EMAIL_ADDRESS}>`,
     to: process.env.EMAIL_TO,
@@ -25,5 +34,5 @@ export async function POST(request: NextRequest) {
     `,
   });
 
-  return NextResponse.json({ message: "success" });
+  return NextResponse.json({ message: "OK" }, { status: 200 });
 }
