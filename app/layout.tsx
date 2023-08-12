@@ -2,6 +2,7 @@ import { cn } from "@/utils/classnames";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
+import { DotsBG } from "@/content/DotsBG";
 
 const font = Space_Grotesk({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
           "bg-gray-100 scroll-smooth overflow-x-hidden"
         )}
       >
+        <DotsBG />
         {children}
       </body>
     </html>
