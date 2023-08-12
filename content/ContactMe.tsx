@@ -131,9 +131,8 @@ export const ContactMe = () => {
       >
         <h1 className="text-7xl mb-4">Social Media</h1>
         {links.map((link, i) => (
-          <RevealSideways direction={-1}>
+          <RevealSideways key={i} direction={-1}>
             <ButtonLink
-              key={i}
               href={link.href}
               className={cn(link.bgClass, link.textClass, "w-full")}
             >
