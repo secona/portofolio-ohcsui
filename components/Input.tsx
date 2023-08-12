@@ -6,6 +6,7 @@ const defaultInputClassnames = [
   "border-2 border-solid border-black",
   "outline-none",
   "px-2 py-1",
+  "disabled:bg-zinc-300",
 ];
 
 export interface InputProps extends ComponentPropsWithoutRef<"input"> {}

@@ -5,6 +5,7 @@ import { Input, TextArea } from "@/components/Input";
 import { RevealSideways } from "@/components/RevealSideways";
 import { Section } from "@/components/Section";
 import { cn } from "@/utils/classnames";
+import { useState } from "react";
 import { GitHub, Icon, Instagram, Linkedin, Twitter } from "react-feather";
 import { useForm } from "react-hook-form";
 
@@ -55,6 +56,7 @@ export interface ContactMeForm {
 }
 
 export const ContactMe = () => {
+  const [submitting, setSubmitting] = useState(false);
   const { register, handleSubmit, reset } = useForm<ContactMeForm>();
 
   return (
@@ -69,10 +71,12 @@ export const ContactMe = () => {
     >
       <form
         onSubmit={handleSubmit(async (v) => {
+          setSubmitting(true);
           await fetch("/api/contact-me", {
             method: "POST",
             body: JSON.stringify(v),
           });
+          setSubmitting(false);
 
           reset();
         })}
@@ -85,11 +89,34 @@ export const ContactMe = () => {
         )}
       >
         <h1 className="text-7xl mb-4">Contact Me</h1>
-        <Input {...register("email")} placeholder="Email" />
-        <Input {...register("name")} placeholder="Name" />
-        <Input {...register("subject")} placeholder="Subject" />
-        <TextArea {...register("message")} placeholder="Message" rows={5} />
-        <Button className="mx-auto">Send</Button>
+        <Input
+          {...register("email")}
+          required
+          placeholder="Email*"
+          disabled={submitting}
+        />
+        <Input
+          {...register("name")}
+          required
+          placeholder="Name*"
+          disabled={submitting}
+        />
+        <Input
+          {...register("subject")}
+          required
+          placeholder="Subject*"
+          disabled={submitting}
+        />
+        <TextArea
+          {...register("message")}
+          required
+          placeholder="Message*"
+          rows={5}
+          disabled={submitting}
+        />
+        <Button disabled={submitting} className="mx-auto">
+          Send
+        </Button>
       </form>
       <div
         className={cn(
