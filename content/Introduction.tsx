@@ -1,8 +1,11 @@
+"use client";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
 import { TypingCode } from "@/components/TypingCode";
+import { useRef } from "react";
 import { GitHub, Linkedin, Twitter } from "react-feather";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 const rustCode = `#[derive(Default, PartialEq)]
 pub struct Point<T = usize> {
@@ -29,32 +32,42 @@ const reactCode = `export const Greeting = () => {
 };`;
 
 export const Introduction = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const mainY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
-    <Section className="bg-gray-100">
+    <Section ref={ref} className="bg-gray-100">
       <TypingCode code={rustCode} className="absolute left-[15%] top-[25%]" />
       <TypingCode code={reactCode} className="absolute right-[15%] top-[55%]" />
-      <Card className="z-10">
-        <p className="text-lg">Hello, World! My name is</p>
-        <h1 className="text-7xl">Vito Secona</h1>
-        <h2 className="text-lg">Web Developer</h2>
-      </Card>
-      <div className="flex gap-3 z-10">
-        <ButtonLink href="https://github.com/secona" className="bg-[#333333]">
-          <GitHub color="white" />
-        </ButtonLink>
-        <ButtonLink
-          href="https://linkedin.com/in/secona"
-          className="bg-[#0077b5]"
-        >
-          <Linkedin color="white" />
-        </ButtonLink>
-        <ButtonLink
-          href="https://twitter.com/vitosecona"
-          className="bg-[#1DA1F2]"
-        >
-          <Twitter color="white" />
-        </ButtonLink>
-      </div>
+      <motion.div style={{ y: mainY }}>
+        <Card className="z-10">
+          <p className="text-lg">Hello, World! My name is</p>
+          <h1 className="text-7xl">Vito Secona</h1>
+          <h2 className="text-lg">Web Developer</h2>
+        </Card>
+        <div className="flex gap-3 z-10">
+          <ButtonLink href="https://github.com/secona" className="bg-[#333333]">
+            <GitHub color="white" />
+          </ButtonLink>
+          <ButtonLink
+            href="https://linkedin.com/in/secona"
+            className="bg-[#0077b5]"
+          >
+            <Linkedin color="white" />
+          </ButtonLink>
+          <ButtonLink
+            href="https://twitter.com/vitosecona"
+            className="bg-[#1DA1F2]"
+          >
+            <Twitter color="white" />
+          </ButtonLink>
+        </div>
+      </motion.div>
     </Section>
   );
 };
