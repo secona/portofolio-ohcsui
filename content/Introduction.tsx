@@ -55,10 +55,7 @@ export const Introduction = () => {
         style={{ y: bgY }}
         className="absolute w-full h-full top-0 left-0 bg-dots bg-[length:40px_40px]"
       />
-      <TypingCode
-        code={rustCode}
-        className="absolute left-[15%] top-0 lg:top-[25%]"
-      />
+      <TypingCode code={rustCode} className="absolute left-[15%] top-[30%]" />
       <TypingCode code={reactCode} className="absolute right-[15%] top-[15%]" />
       <TypingCode code={nodeCode} className="absolute left-[47%] top-[62%]" />
       <motion.div style={{ y: mainY }}>
