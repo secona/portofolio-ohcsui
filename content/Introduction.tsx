@@ -16,8 +16,7 @@ impl Point<usize> {
     pub fn new(x: usize, y: usize) -> Self {
         Self { x, y }
     }
-}
-`;
+}`;
 
 const reactCode = `export const Greeting = () => {
   const greetingToUse = (() => {
@@ -29,6 +28,16 @@ const reactCode = `export const Greeting = () => {
 
   return <h1>Good {greetingToUse}!</h1>;
 };`;
+
+const nodeCode = `async function main() {
+  clients.connect();
+
+  const app = createServer();
+
+  app.listen(5000, () => {
+    logger.info('Listening on port 5000 for ' + process.env.NODE_ENV);
+  });
+}`;
 
 export const Introduction = () => {
   const ref = useRef(null);
@@ -46,8 +55,12 @@ export const Introduction = () => {
         style={{ y: bgY }}
         className="absolute w-full h-full top-0 left-0 bg-dots bg-[length:40px_40px]"
       />
-      <TypingCode code={rustCode} className="absolute left-[15%] top-[25%]" />
-      <TypingCode code={reactCode} className="absolute right-[15%] top-[55%]" />
+      <TypingCode
+        code={rustCode}
+        className="absolute left-[15%] top-0 lg:top-[25%]"
+      />
+      <TypingCode code={reactCode} className="absolute right-[15%] top-[15%]" />
+      <TypingCode code={nodeCode} className="absolute left-[47%] top-[62%]" />
       <motion.div style={{ y: mainY }}>
         <Card className="z-10 mb-2">
           <p className="text-lg">Hello, World! My name is</p>
