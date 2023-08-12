@@ -57,7 +57,10 @@ export const ContactMe = () => {
   const { register, handleSubmit, reset } = useForm<ContactMeForm>();
 
   return (
-    <Section id="contact-me" className="bg-red-400 grid grid-cols-2 gap-0">
+    <Section
+      id="contact-me"
+      className="bg-red-400 grid h-[200vh] md:h-[100vh] grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-0"
+    >
       <form
         onSubmit={handleSubmit(async (v) => {
           await fetch("/api/contact-me", {
@@ -67,7 +70,7 @@ export const ContactMe = () => {
 
           reset();
         })}
-        className="flex flex-col gap-3 px-36"
+        className="flex flex-col gap-3 h-full w-full px-12 sm:px-24 md:px-8 lg:px-16 xl:px-28 py-12 md:py-8 lg:py-12 xl:py-16"
       >
         <h1 className="text-7xl mb-4">Contact Me</h1>
         <Input {...register("email")} placeholder="Email" />
@@ -76,7 +79,7 @@ export const ContactMe = () => {
         <TextArea {...register("message")} placeholder="Message" rows={5} />
         <Button className="mx-auto">Send</Button>
       </form>
-      <div className="border-l-4 border-solid border-black h-full bg-white flex flex-col justify-center px-36 gap-3">
+      <div className="h-full w-full px-12 sm:px-24 md:px-8 lg:px-16 xl:px-28 py-12 md:py-8 lg:py-12 xl:py-16 border-t-4 md:border-t-0 border-l-0 md:border-l-4 border-solid border-black bg-white flex flex-col gap-3">
         <h1 className="text-7xl mb-4">Social Media</h1>
         {links.map((link, i) => (
           <ButtonLink
