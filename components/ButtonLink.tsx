@@ -13,7 +13,7 @@ export const ButtonLink = (props: ButtonLinkProps) => {
       href={props.href}
       {...cnProps(
         props,
-        "inline-flex gap-1 items-center p-2 cursor-pointer",
+        "inline-flex gap-2 items-center py-2 px-3 cursor-pointer",
         "shadow-hard shadow-black",
         "border-2 border-black border-solid",
         "text-lg"
