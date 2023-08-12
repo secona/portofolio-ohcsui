@@ -1,10 +1,8 @@
 "use client";
-import { ButtonLink } from "@/components/ButtonLink";
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
 import { TypingCode } from "@/components/TypingCode";
 import { useRef } from "react";
-import { GitHub, Linkedin, Twitter } from "react-feather";
 import { useScroll, useTransform, motion } from "framer-motion";
 
 const rustCode = `#[derive(Default, PartialEq)]
@@ -55,23 +53,6 @@ export const Introduction = () => {
           <h1 className="text-7xl">Vito Secona</h1>
           <h2 className="text-lg">Web Developer</h2>
         </Card>
-        <div className="flex gap-3 z-10">
-          <ButtonLink href="https://github.com/secona" className="bg-[#333333]">
-            <GitHub color="white" />
-          </ButtonLink>
-          <ButtonLink
-            href="https://linkedin.com/in/secona"
-            className="bg-[#0077b5]"
-          >
-            <Linkedin color="white" />
-          </ButtonLink>
-          <ButtonLink
-            href="https://twitter.com/vitosecona"
-            className="bg-[#1DA1F2]"
-          >
-            <Twitter color="white" />
-          </ButtonLink>
-        </div>
       </motion.div>
     </Section>
   );
