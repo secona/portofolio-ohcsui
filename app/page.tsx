@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/ButtonLink";
 import { Card } from "@/components/Card";
 import { GitHubRepo } from "@/components/GitHubRepo";
+import { Input } from "@/components/Input";
 import { Section } from "@/components/Section";
 import { TypingCode } from "@/components/TypingCode";
 import { ReactLogo } from "@/icons/ReactLogo";
@@ -67,7 +68,7 @@ export default function Home() {
       </Section>
       <Section className="bg-blue-300">
         <Card className="max-w-2xl">
-          <h1 className="text-6xl">About Me</h1>
+          <h1 className="text-7xl">About Me</h1>
           <p>
             I am a Computer Science student at Universitas Indonesia. I have
             been passionate in the world of Web Development since I was in
@@ -107,7 +108,12 @@ export default function Home() {
         </div>
       </Section>
       <Section className="bg-red-300 grid grid-cols-2 pb-0">
-        <div></div>
+        <form className="flex flex-col gap-2 px-36">
+          <h1 className="text-7xl">Contact Me</h1>
+          <Input placeholder="Email" />
+          <Input placeholder="Name" />
+          <Input placeholder="Subject" />
+        </form>
         <div className="border-l-4 border-solid border-black h-full bg-white"></div>
       </Section>
     </>
