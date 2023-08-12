@@ -15,7 +15,7 @@ export const ContactMe = () => {
   const { register, handleSubmit, reset } = useForm<ContactMeForm>();
 
   return (
-    <Section className="bg-red-300 grid grid-cols-2 pb-0">
+    <Section className="bg-red-400 grid grid-cols-2 pb-0">
       <form
         onSubmit={handleSubmit(async (v) => {
           await fetch("/api/contact-me", {
