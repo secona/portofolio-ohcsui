@@ -49,7 +49,7 @@ export const Introduction = () => {
   const mainY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <Section ref={ref}>
+    <Section ref={ref} className="px-10">
       <TypingCode code={rustCode} className="absolute left-[15%] top-[30%]" />
       <TypingCode code={reactCode} className="absolute right-[15%] top-[15%]" />
       <TypingCode code={nodeCode} className="absolute left-[47%] top-[62%]" />
