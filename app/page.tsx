@@ -106,6 +106,10 @@ export default function Home() {
           />
         </div>
       </Section>
+      <Section className="bg-red-300 grid grid-cols-2 pb-0">
+        <div></div>
+        <div className="border-l-4 border-solid border-black h-full bg-white"></div>
+      </Section>
     </>
   );
 }
