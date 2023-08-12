@@ -3,6 +3,7 @@ import { Card } from "./Card";
 import { ReactNode } from "react";
 import { ExternalLink } from "react-feather";
 import Image from "next/image";
+import { RevealUpwards } from "./RevealUpwards";
 
 interface GitHubRepoProps {
   path: string;
@@ -14,23 +15,25 @@ interface GitHubRepoProps {
 
 export const GitHubRepo = (props: GitHubRepoProps) => {
   return (
-    <Card className="w-96">
-      <Image
-        width={1920}
-        height={1080}
-        src={props.imageSrc}
-        alt={props.imageAlt}
-        className="mb-6"
-      />
-      <Link
-        href={`https://github.com/${props.path}`}
-        className="text-xl font-bold underline text-center"
-      >
-        <span className="mr-1">{props.path}</span>
-        <ExternalLink size="1rem" className="inline" />
-      </Link>
-      <p>{props.description}</p>
-      <div className="flex gap-2 mt-2">{props.langLogos}</div>
-    </Card>
+    <RevealUpwards>
+      <Card className="w-96">
+        <Image
+          width={1920}
+          height={1080}
+          src={props.imageSrc}
+          alt={props.imageAlt}
+          className="mb-6"
+        />
+        <Link
+          href={`https://github.com/${props.path}`}
+          className="text-xl font-bold underline text-center"
+        >
+          <span className="mr-1">{props.path}</span>
+          <ExternalLink size="1rem" className="inline" />
+        </Link>
+        <p>{props.description}</p>
+        <div className="flex gap-2 mt-2">{props.langLogos}</div>
+      </Card>
+    </RevealUpwards>
   );
 };

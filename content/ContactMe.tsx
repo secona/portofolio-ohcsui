@@ -2,6 +2,7 @@
 import { Button } from "@/components/Button";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Input, TextArea } from "@/components/Input";
+import { RevealSideways } from "@/components/RevealSideways";
 import { Section } from "@/components/Section";
 import { cn } from "@/utils/classnames";
 import { GitHub, Icon, Instagram, Linkedin, Twitter } from "react-feather";
@@ -103,14 +104,16 @@ export const ContactMe = () => {
       >
         <h1 className="text-7xl mb-4">Social Media</h1>
         {links.map((link, i) => (
-          <ButtonLink
-            key={i}
-            href={link.href}
-            className={cn(link.bgClass, link.textClass)}
-          >
-            <link.icon />
-            <span>{link.username}</span>
-          </ButtonLink>
+          <RevealSideways direction={-1}>
+            <ButtonLink
+              key={i}
+              href={link.href}
+              className={cn(link.bgClass, link.textClass, "w-full")}
+            >
+              <link.icon />
+              <span>{link.username}</span>
+            </ButtonLink>
+          </RevealSideways>
         ))}
       </div>
     </Section>
