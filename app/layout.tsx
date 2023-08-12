@@ -17,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(font.className, "bg-gray-100")}>{children}</body>
+      <body className={cn(font.className, "bg-gray-100 scroll-smooth")}>
+        {children}
+      </body>
     </html>
   );
 }

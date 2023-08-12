@@ -4,6 +4,7 @@ import { Section } from "@/components/Section";
 import { TypingCode } from "@/components/TypingCode";
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
+import { ButtonLink } from "@/components/ButtonLink";
 
 const rustCode = `#[derive(Default, PartialEq)]
 pub struct Point<T = usize> {
@@ -48,11 +49,14 @@ export const Introduction = () => {
       <TypingCode code={rustCode} className="absolute left-[15%] top-[25%]" />
       <TypingCode code={reactCode} className="absolute right-[15%] top-[55%]" />
       <motion.div style={{ y: mainY }}>
-        <Card className="z-10">
+        <Card className="z-10 mb-2">
           <p className="text-lg">Hello, World! My name is</p>
           <h1 className="text-7xl">Vito Secona</h1>
           <h2 className="text-lg">Web Developer</h2>
         </Card>
+        <ButtonLink href="#about-me" className="bg-orange-400">
+          Learn More
+        </ButtonLink>
       </motion.div>
     </Section>
   );

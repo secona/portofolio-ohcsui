@@ -7,7 +7,7 @@ import { TSLogo } from "@/icons/TSLogo";
 
 export const GitHubProjects = () => {
   return (
-    <Section className="bg-yellow-300">
+    <Section id="github-projects" className="bg-yellow-300">
       <div className="flex flex-wrap gap-4 items-start">
         <GitHubRepo
           imageSrc="/task-tracker-screenshot.png"
