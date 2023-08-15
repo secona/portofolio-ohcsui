@@ -51,7 +51,7 @@ export const Introduction = () => {
   return (
     <Section
       ref={ref}
-      className="px-10 flex flex-col items-center justify-center"
+      className="px-10 flex flex-col items-center justify-center h-screen"
     >
       <TypingCode code={rustCode} className="absolute left-[15%] top-[30%]" />
       <TypingCode code={reactCode} className="absolute right-[15%] top-[15%]" />

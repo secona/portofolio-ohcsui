@@ -5,7 +5,8 @@ import { cn } from "@/utils/classnames";
 const paragraphCN = cn(
   "h-full w-full",
   "flex flex-col justify-center",
-  "px-16 sm:px-24 md:px-48 lg:px-24 xl:px-36",
+  "px-16 sm:px-24 md:px-26 lg:px-24 xl:px-32",
+  "py-10 sm:py-20 md:py-20 lg:py-16 xl:py-22",
   "border-solid border-black"
 );
 
@@ -15,7 +16,7 @@ export const AboutMe = () => {
       id="about-me"
       className={cn(
         "grid",
-        "h-[200vh] lg:h-[100vh]",
+        // "h-[200vh] lg:h-[100vh]",
         "grid-rows-2 lg:grid-rows-1",
         "grid-cols-1 lg:grid-cols-2"
       )}
@@ -38,7 +39,7 @@ export const AboutMe = () => {
           paragraphCN,
           "border-t-4 lg:border-t-0",
           "border-l-0 lg:border-l-4",
-          "bg-blue-300"
+          "bg-blue-300 py-36"
         )}
       >
         <RevealSideways direction={-1}>

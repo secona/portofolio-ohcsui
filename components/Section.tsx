@@ -9,7 +9,7 @@ export const Section = forwardRef<
     <div
       {...cnProps(
         props,
-        "w-full min-h-screen",
+        "w-full",
         "[&:not(:first-child)]:border-t-4 border-solid border-black",
         "relative"
       )}
