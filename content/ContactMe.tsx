@@ -70,16 +70,15 @@ export const ContactMe = () => {
       )}
     >
       <form
-        onSubmit={handleSubmit(async (v) => {
-          setSubmitting(true);
-          await fetch("/api/contact-me", {
-            method: "POST",
-            body: JSON.stringify(v),
-          });
-          setSubmitting(false);
-
-          reset();
-        })}
+        //onSubmit={handleSubmit(async (v) => {
+        //  setSubmitting(true);
+        //  await fetch("/api/contact-me", {
+        //    method: "POST",
+        //    body: JSON.stringify(v),
+        //  });
+        //  setSubmitting(false);
+        //  reset();
+        //})}
         className={cn(
           "bg-red-400",
           "flex flex-col gap-3",
